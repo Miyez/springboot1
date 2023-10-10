@@ -17,7 +17,7 @@ public class test {
     @Bean(name = "pro1")
     public Provider getProvider(){
         Provider provider = new Provider();
-        provider.setProDesc("123123123");
+        provider.setProDesc("234234");
         return provider;
     }
 }

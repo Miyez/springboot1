@@ -17,4 +17,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
     public String loginpage(){
         return "/index.html";
     }
+
+    @RequestMapping(value = "/main")
+    public String mainpage(){
+        return "/welcome.html";
+    }
 }

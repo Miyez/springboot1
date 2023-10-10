@@ -8,7 +8,7 @@ spring:
     password: 123456
     url: jdbc:mysql://127.0.0.1:3306/test1?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
   resources:
-    static-locations: classpath:/templates,classpath:/static/
+    static-locations: classpath:/templates/,classpath:/static/
 
 
 mybatis-plus:

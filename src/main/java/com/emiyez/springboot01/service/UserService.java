@@ -26,4 +26,6 @@ public interface UserService extends JoinIService<SmbmsUser> {
 
     public ResultAjax pageList();
 
+    public SmbmsUser getUserByuerName(String userName);
+
 }

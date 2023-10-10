@@ -30,12 +30,12 @@ import java.util.HashMap;
     @RequestMapping(value = "/Login" ,method = RequestMethod.POST)
     @ResponseBody
     public ResultAjax login(@RequestBody HashMap<String, String> map, HttpServletRequest request){
-        SmbmsUser smbmsUser = null;
-        if (!smbmsUser.getUserPassword().equals(map.get("password"))){
+        SmbmsUser smbmsUser = userService.getUserByuerName(map.get("uname"));
+        if (!smbmsUser.getUserPassword().equals(map.get("upwd"))){
             return ResultAjax.fail();
         }else {
             HttpSession session = request.getSession();
-            session.setAttribute("username",map.get("username"));
+            session.setAttribute("username",map.get("uname"));
             return ResultAjax.success();
         }
     }

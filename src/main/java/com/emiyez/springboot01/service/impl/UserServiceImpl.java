@@ -48,6 +48,15 @@ public class UserServiceImpl extends JoinServiceImpl<UserMapper,SmbmsUser> imple
     }
 
     @Override
+    public SmbmsUser getUserByuerName(String userName) {
+        QueryWrapper<SmbmsUser> smbmsUserQueryWrapper = new QueryWrapper<>();
+        smbmsUserQueryWrapper
+                .select("userCode","userPassword")
+                .eq("userCode",userName);
+        return this.getOne(smbmsUserQueryWrapper);
+    }
+
+    @Override
     public ResultAjax find_User_Addr_list() {
         List<SmbmsUser> userAddrList = userMapper.find_User_Addr_list();
         return ResultAjax.success(userAddrList);
