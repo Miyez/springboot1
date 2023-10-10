@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace命名空间指向DAO接口-->
+<mapper namespace="com.emiyez.springboot01.mapper.ProviderMapper">
+    <select id="findProviderList" resultType="Provider">
+        SELECT * FROM test1.smbms_provider where id=#{id}
+    </select>
+
+    <update id="delProviderById">
+        update test set where id=#{id}
+    </update>
+
+
+</mapper>
