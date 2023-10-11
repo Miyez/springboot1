@@ -7,11 +7,11 @@ package com.emiyez.springboot01.mapper;/*
  */
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.emiyez.springboot01.entity.SmbmsAddress;
+import com.emiyez.springboot01.entity.Address;
 import com.emiyez.springboot01.utils.ResultAjax;
 import org.springframework.stereotype.Repository;
 
 @Repository("addrMapper")
-public interface AddrMapper extends BaseMapper<SmbmsAddress> {
+public interface AddrMapper extends BaseMapper<Address> {
     public ResultAjax findAddr();
 }

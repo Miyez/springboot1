@@ -6,10 +6,6 @@ package com.emiyez.springboot01;/*
  *@create 2023/10/9 15:01
  */
 
-import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.emiyez.springboot01.entity.SmbmsUser;
-import com.emiyez.springboot01.mapper.UserMapper;
-import com.emiyez.springboot01.service.AddrService;
 import com.emiyez.springboot01.service.UserService;
 import com.emiyez.springboot01.utils.ResultAjax;
 import org.junit.Test;
@@ -45,11 +41,11 @@ public class userTest {
         System.out.println(resultAjax);
     }
 
-    @Test
-    public void test3(){
-        ResultAjax resultAjax = userService.find_User_Addr_list1();
-        System.out.println(resultAjax);
-    }
+//    @Test
+//    public void test3(){
+//        ResultAjax resultAjax = userService.find_User_Addr_list1();
+//        System.out.println(resultAjax);
+//    }
 
     @Test
     public void page(){

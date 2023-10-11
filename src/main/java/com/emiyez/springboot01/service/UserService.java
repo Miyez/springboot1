@@ -7,25 +7,21 @@ package com.emiyez.springboot01.service;/*
  */
 
 
-import com.baomidou.mybatisplus.extension.service.IService;
-import com.emiyez.springboot01.entity.SmbmsUser;
+import com.emiyez.springboot01.entity.User;
 import com.emiyez.springboot01.utils.ResultAjax;
 import icu.mhb.mybatisplus.plugln.base.service.JoinIService;
 
 import java.util.List;
 
-public interface UserService extends JoinIService<SmbmsUser> {
+public interface UserService extends JoinIService<User> {
 
-    public ResultAjax getList();
+    public User getUserByuerName(String userName);
 
-    public ResultAjax delUserById(Long id);
+    public ResultAjax UserList(int page,int limit);
 
-    public ResultAjax find_User_Addr_list();
+//    public int findUserCount();
 
-    public ResultAjax find_User_Addr_list1();
+    public int userEdit(Long userId,int addr);
 
-    public ResultAjax pageList();
-
-    public SmbmsUser getUserByuerName(String userName);
 
 }

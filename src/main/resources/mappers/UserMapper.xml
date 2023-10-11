@@ -4,10 +4,21 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!--namespace命名空间指向DAO接口-->
 <mapper namespace="com.emiyez.springboot01.mapper.UserMapper">
-    <select id="find_User_Addr_list" resultType="SmbmsUser">
-        SELECT * FROM
-            test1.smbms_user u left join test1.smbms_address a
-                on u.id=a.userId
+    <select id="UserList" resultType="User">
+        SELECT * FROM test3.user limit #{page},#{limit}
     </select>
+
+
+    <select id="findUserCount" resultType="int">
+        SELECT count(1) FROM test3.user
+    </select>
+
+    <update id="userEdit">
+        UPDATE test3.user
+        <set>
+            <if test="addr != null">addr=#{addr},</if>
+        </set>
+        where userId=#{userId}
+    </update>
 
 </mapper>

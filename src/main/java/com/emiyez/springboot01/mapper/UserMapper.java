@@ -7,23 +7,29 @@ package com.emiyez.springboot01.mapper;/*
  */
 
 
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.emiyez.springboot01.entity.SmbmsUser;
+import com.emiyez.springboot01.entity.User;
 import com.emiyez.springboot01.utils.ResultAjax;
 import icu.mhb.mybatisplus.plugln.base.mapper.JoinBaseMapper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
 @Repository("userMapper")
-public interface UserMapper extends JoinBaseMapper<SmbmsUser> {
+public interface UserMapper extends JoinBaseMapper<User> {
     public ResultAjax getUserByUserCode(String userCode);
 
-    public List<SmbmsUser> getList();
+    public List<User> UserList(@Param("page") int page,
+                               @Param("limit") int limit);
 
-    public List<SmbmsUser> find_User_Addr_list();
 
-    public List<SmbmsUser> find_User_Addr_list1();
+    public int findUserCount();
+
+
+    public int userEdit(
+            @Param("addr") int addr,
+            @Param("userId") Long userId);
 
 
 }

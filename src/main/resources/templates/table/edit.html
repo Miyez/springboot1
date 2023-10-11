@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>layui</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="/lib/layui-v2.5.5/css/layui.css" media="all">
+    <link rel="stylesheet" href="/css/public.css" media="all">
+    <style>
+        body {
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+<div class="layui-form layuimini-form">
+    <div class="layui-form-item">
+        <label class="layui-form-label required">供应商id</label>
+        <div class="layui-input-block">
+            <input type="text" name="userId" value="" class="layui-input" disabled>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label required">地址</label>
+        <div class="layui-input-block">
+            <input type="text" name="addr" value="" class="layui-input">
+        </div>
+    </div>
+
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn layui-btn-normal" lay-submit lay-filter="saveBtn">确认保存</button>
+        </div>
+    </div>
+</div>
+<script src="/lib/layui-v2.5.5/layui.js" charset="utf-8"></script>
+<script>
+    layui.use(['form'], function () {
+        var form = layui.form,
+            layer = layui.layer,
+            $ = layui.$;
+
+        var retrievedData = JSON.parse(localStorage.getItem("myData"));
+        $("input[name='userId']").val(retrievedData.userId);
+        $("input[name='addr']").val(retrievedData.addr);
+
+        //监听提交
+        form.on('submit(saveBtn)', function (data) {
+            var formdata = data.field;
+
+            $.ajax({
+                url:"users/userEdit",
+                type: 'POST', // 使用POST方法提交数据
+                data: formdata, // 将表单数据发送到服务器
+                dataType: 'json', // 设置返回的数据格式为JSON
+
+                success:function (response){
+                    //成功地回调函数
+                    var index = layer.alert("修改成功", {
+                        title: '最终结果:'
+                    }, function () {
+
+                        // 关闭弹出层
+                        layer.close(index);
+                        var iframeIndex = parent.layer.getFrameIndex(window.name);
+                        window.parent.location.reload();
+                        parent.layer.close(iframeIndex);
+
+                    });
+                },
+                error: function(error){
+                    alert("操作错误")
+                    console.log(error); // 在控制台打印出错误信息，以供调试。
+                }
+            });
+            return false;
+        });
+
+    });
+</script>
+</body>
+</html>

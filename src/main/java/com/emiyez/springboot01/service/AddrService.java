@@ -7,9 +7,9 @@ package com.emiyez.springboot01.service;/*
  */
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.emiyez.springboot01.entity.SmbmsAddress;
+import com.emiyez.springboot01.entity.Address;
 import com.emiyez.springboot01.utils.ResultAjax;
 
-public interface AddrService extends IService<SmbmsAddress> {
+public interface AddrService extends IService<Address> {
     public ResultAjax findAllAddr();
 }

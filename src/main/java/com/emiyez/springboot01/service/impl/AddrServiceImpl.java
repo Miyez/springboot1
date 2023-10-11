@@ -7,7 +7,7 @@ package com.emiyez.springboot01.service.impl;/*
  */
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.emiyez.springboot01.entity.SmbmsAddress;
+import com.emiyez.springboot01.entity.Address;
 
 import com.emiyez.springboot01.mapper.AddrMapper;
 import com.emiyez.springboot01.service.AddrService;
@@ -21,7 +21,7 @@ import java.util.List;
 
 
 @Service("addrService")
-public class AddrServiceImpl extends ServiceImpl<AddrMapper, SmbmsAddress> implements AddrService {
+public class AddrServiceImpl extends ServiceImpl<AddrMapper, Address> implements AddrService {
     @Resource(name = "addrMapper")
     @Setter
     private AddrMapper addrMapper;
@@ -30,7 +30,7 @@ public class AddrServiceImpl extends ServiceImpl<AddrMapper, SmbmsAddress> imple
     @Override
     public ResultAjax findAllAddr() {
 
-        List<SmbmsAddress> list = this.list();
+        List<Address> list = this.list();
         return ResultAjax.success(list);
     }
 }

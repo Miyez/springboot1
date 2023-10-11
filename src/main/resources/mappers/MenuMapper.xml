@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace命名空间指向DAO接口-->
+<mapper namespace="com.emiyez.springboot01.mapper.MenuMapper">
+    <cache/>
+    <select id="getMenu" resultType="Menu" useCache="true">
+        SELECT * FROM test4.system_menu order by id ;
+    </select>
+</mapper>

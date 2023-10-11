@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--namespace命名空间指向DAO接口-->
+<mapper namespace="com.emiyez.springboot01.mapper.GoodsMapper">
+    <select id="findGoodsList" resultType="Goods">
+        SELECT * FROM test3.goods where true
+
+        <if test="goodsName!=null and  goodsName!=''">
+            and goodsName like concat('%',#{goodsName},'%')
+        </if>
+        limit #{page},#{limit}
+    </select>
+
+
+    <select id="findGoodsCount" resultType="int">
+        SELECT count(1) FROM test3.goods
+    </select>
+</mapper>

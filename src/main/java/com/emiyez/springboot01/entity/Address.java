@@ -10,7 +10,7 @@ import lombok.Data;
 
 @Data
 
-public class SmbmsAddress {
+public class Address {
     private Long id;//主键ID
     private String contact;//联系人姓名
     private String addressDesc;//收货地址明细
