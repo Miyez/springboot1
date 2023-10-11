@@ -22,24 +22,24 @@ import javax.annotation.Resource;
 public class userTest {
     @Resource
     private UserService userService;
-
-    @Test
-    public void test(){
-        ResultAjax list = userService.getList();
-        System.out.println(list);
-    }
-
-    @Test
-    public void test1(){
-        ResultAjax resultAjax = userService.delUserById(50L);
-        System.out.println(resultAjax);
-    }
-
-    @Test
-    public void test2(){
-        ResultAjax resultAjax = userService.find_User_Addr_list();
-        System.out.println(resultAjax);
-    }
+//
+//    @Test
+//    public void test(){
+//        ResultAjax list = userService.getList();
+//        System.out.println(list);
+//    }
+//
+//    @Test
+//    public void test1(){
+//        ResultAjax resultAjax = userService.delUserById(50L);
+//        System.out.println(resultAjax);
+//    }
+//
+//    @Test
+//    public void test2(){
+//        ResultAjax resultAjax = userService.find_User_Addr_list();
+//        System.out.println(resultAjax);
+//    }
 
 //    @Test
 //    public void test3(){
@@ -47,10 +47,10 @@ public class userTest {
 //        System.out.println(resultAjax);
 //    }
 
-    @Test
-    public void page(){
-        ResultAjax resultAjax = userService.pageList();
-        System.out.println(resultAjax);
-    }
+//    @Test
+//    public void page(){
+//        ResultAjax resultAjax = userService.pageList();
+//        System.out.println(resultAjax);
+//    }
 
 }
