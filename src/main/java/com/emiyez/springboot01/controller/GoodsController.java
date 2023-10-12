@@ -31,10 +31,8 @@ public class GoodsController {
 
     ){
 
-        System.out.println("goodsName:"+goodsName);
-        ResultAjax goodsList = goodsService.findGoodsList(page, limit, goodsName);
         //        return ResultAjax.ProviderSuccess(providerList,providerService.findProviderCount());
-        return goodsList;
+        return goodsService.findGoodsList(page, limit, goodsName);
     }
 
 

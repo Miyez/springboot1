@@ -8,6 +8,7 @@ package com.emiyez.springboot01.service;/*
 
 
 
+import com.emiyez.springboot01.entity.Bills;
 import com.emiyez.springboot01.entity.Goods;
 import com.emiyez.springboot01.utils.ResultAjax;
 import icu.mhb.mybatisplus.plugln.base.service.JoinIService;

@@ -12,6 +12,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
@@ -22,6 +23,24 @@ import javax.annotation.Resource;
 public class userTest {
     @Resource
     private UserService userService;
+
+    @Resource
+    private RedisTemplate<String,String> redisTemplate;
+
+    @Test
+    public void test(){
+
+//        redisTemplate.opsForValue().set("uname","张三");
+//
+//        System.out.println(redisTemplate.opsForValue().get("uname"));
+//
+        redisTemplate.opsForZSet().add("zset1","zset-1",1.0);
+        redisTemplate.opsForZSet().add("zset1","zset-2",2.0);
+        redisTemplate.opsForZSet().add("zset1","zset-3",3.0);
+        redisTemplate.opsForZSet().add("zset1","zset-4",4.0);
+        redisTemplate.opsForZSet().add("zset1","zset-5",5.0);
+
+    }
 //
 //    @Test
 //    public void test(){

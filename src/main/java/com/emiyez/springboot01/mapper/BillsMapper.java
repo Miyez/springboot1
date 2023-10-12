@@ -8,20 +8,22 @@ package com.emiyez.springboot01.mapper;/*
 
 
 import com.emiyez.springboot01.entity.Bills;
+import com.emiyez.springboot01.utils.ResultAjax;
+import icu.mhb.mybatisplus.plugln.base.mapper.JoinBaseMapper;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
 
-public interface BillsMapper {
+public interface BillsMapper extends JoinBaseMapper<Bills> {
     /**
      * 获得所有供应商信息
      * @return
      */
-    public List<Bills> findBillsList(@Param("page") int page,
-                                        @Param("limit") int limit,
-                                        @Param("BeginTime") String BeginTime,
-                                        @Param("EndTime") String EndTime
+    public ResultAjax findBillsList(@Param("page") int page,
+                                    @Param("limit") int limit,
+                                    @Param("BeginTime") String BeginTime,
+                                    @Param("EndTime") String EndTime
     );
     /**
      * 查询供应商总数

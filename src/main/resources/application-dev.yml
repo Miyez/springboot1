@@ -9,6 +9,12 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/test3?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
   resources:
     static-locations: classpath:/templates/,classpath:/static/
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    password: 123456
+
 
 
 mybatis-plus:

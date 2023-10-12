@@ -7,6 +7,8 @@ package com.emiyez.springboot01.controller;/*
  */
 
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.emiyez.springboot01.entity.Bills;
 import com.emiyez.springboot01.service.BillsService;
 import com.emiyez.springboot01.utils.ResultAjax;
@@ -31,8 +33,8 @@ public class BillsController {
                                    @RequestParam(value ="BeginTime",defaultValue = "") String BeginTime,
                                    @RequestParam(value ="EndTime",defaultValue = "") String EndTime
                                    ){
-        List<Bills> bills = billsService.findBillsList(page,limit,BeginTime,EndTime);
-        return ResultAjax.ProviderSuccess(bills,billsService.findBillsCount());
+
+        return billsService.findBillsList(page,limit,BeginTime,EndTime);
     }
 
 }

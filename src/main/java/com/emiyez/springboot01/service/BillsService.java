@@ -8,21 +8,24 @@ package com.emiyez.springboot01.service;/*
 
 
 import com.emiyez.springboot01.entity.Bills;
+import com.emiyez.springboot01.entity.Goods;
+import com.emiyez.springboot01.utils.ResultAjax;
+import icu.mhb.mybatisplus.plugln.base.service.JoinIService;
 
 import java.util.List;
 
-public interface BillsService {
+public interface BillsService extends JoinIService<Bills> {
     /**
      * 获得所有供应商信息
      * @return
      */
-    public List<Bills> findBillsList(int page, int limit, String BeginTime, String EndTime);
+    public ResultAjax findBillsList(int page, int limit, String BeginTime, String EndTime);
 
     /**
      * 查询供应商总数
      * @return
-     */
-    public int findBillsCount();
+//     */
+//    public int findBillsCount();
 
 
 

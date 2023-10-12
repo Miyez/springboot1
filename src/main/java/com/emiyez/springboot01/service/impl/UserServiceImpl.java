@@ -71,7 +71,6 @@ public class UserServiceImpl extends JoinServiceImpl<UserMapper, User> implement
     @Override
     public int userEdit(Long userId,int addr) {
 
-
         return userMapper.userEdit(addr,userId);
     }
 
