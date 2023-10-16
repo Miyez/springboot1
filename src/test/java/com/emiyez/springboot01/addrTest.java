@@ -6,6 +6,7 @@ package com.emiyez.springboot01;/*
  *@create 2023/10/9 17:16
  */
 
+import com.emiyez.springboot01.log.Log;
 import com.emiyez.springboot01.service.AddrService;
 import com.emiyez.springboot01.utils.ResultAjax;
 import org.junit.Test;

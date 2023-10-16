@@ -9,6 +9,7 @@ package com.emiyez.springboot01.controller;/*
 
 import com.emiyez.springboot01.entity.Bills;
 import com.emiyez.springboot01.entity.User;
+import com.emiyez.springboot01.log.Log;
 import com.emiyez.springboot01.service.UserService;
 import com.emiyez.springboot01.utils.ResultAjax;
 import org.springframework.stereotype.Controller;

@@ -8,6 +8,7 @@ package com.emiyez.springboot01.controller;/*
 
 
 import com.emiyez.springboot01.entity.Goods;
+import com.emiyez.springboot01.log.Log;
 import com.emiyez.springboot01.service.GoodsService;
 import com.emiyez.springboot01.utils.ResultAjax;
 import org.springframework.stereotype.Controller;
@@ -25,6 +26,7 @@ public class GoodsController {
 
     @RequestMapping(value = "/goodsList")
     @ResponseBody
+    @Log("测试")
     public ResultAjax findGoodsList(@RequestParam(value = "page")int page,
                                    @RequestParam(value ="limit")int limit,
                                    @RequestParam(value ="goodsName",defaultValue = "") String goodsName
