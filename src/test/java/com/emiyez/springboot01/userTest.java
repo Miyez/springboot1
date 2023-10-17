@@ -7,6 +7,7 @@ package com.emiyez.springboot01;/*
  */
 
 import com.emiyez.springboot01.service.UserService;
+import com.emiyez.springboot01.utils.RedisUtil;
 import com.emiyez.springboot01.utils.ResultAjax;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,6 +17,9 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Set;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -27,18 +31,28 @@ public class userTest {
     @Resource
     private RedisTemplate<String,String> redisTemplate;
 
+    @Resource
+    private RedisUtil redisUtil;
+
     @Test
     public void test(){
+        redisUtil.setStr("u","u");
 
-//        redisTemplate.opsForValue().set("uname","张三");
-//
+        System.out.println(redisUtil.getStr("u"));
+
+//        redisTemplate.opsForValue().set("uname","王五");
+
 //        System.out.println(redisTemplate.opsForValue().get("uname"));
 //
-        redisTemplate.opsForZSet().add("zset1","zset-1",1.0);
-        redisTemplate.opsForZSet().add("zset1","zset-2",2.0);
-        redisTemplate.opsForZSet().add("zset1","zset-3",3.0);
-        redisTemplate.opsForZSet().add("zset1","zset-4",4.0);
-        redisTemplate.opsForZSet().add("zset1","zset-5",5.0);
+//        redisTemplate.opsForZSet().add("zset1","zset-1",1.0);
+//        redisTemplate.opsForZSet().add("zset1","zset-2",2.0);
+//        redisTemplate.opsForZSet().add("zset1","zset-3",3.0);
+//        redisTemplate.opsForZSet().add("zset1","zset-4",4.0);
+//        redisTemplate.opsForZSet().add("zset1","zset-5",5.0);
+
+//        String uname = redisUtil.getStr("uname");
+//        System.out.println(uname);
+
 
     }
 //

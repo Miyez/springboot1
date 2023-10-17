@@ -11,6 +11,7 @@ import com.emiyez.springboot01.entity.Goods;
 import com.emiyez.springboot01.log.Log;
 import com.emiyez.springboot01.service.GoodsService;
 import com.emiyez.springboot01.utils.ResultAjax;
+import com.sun.istack.internal.logging.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -32,6 +33,8 @@ public class GoodsController {
                                    @RequestParam(value ="goodsName",defaultValue = "") String goodsName
 
     ){
+        Logger logger = Logger.getLogger(GoodsController.class);
+        logger.info("我爱你");
 
         //        return ResultAjax.ProviderSuccess(providerList,providerService.findProviderCount());
         return goodsService.findGoodsList(page, limit, goodsName);

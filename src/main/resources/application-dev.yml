@@ -1,20 +1,29 @@
 server:
   port: 80
 
+
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: 123456
     url: jdbc:mysql://127.0.0.1:3306/test3?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull
+
   resources:
     static-locations: classpath:/templates/,classpath:/static/
-  redis:
-    database: 0
-    host: 127.0.0.1
-    port: 6379
-    password: 123456
 
+  redis:
+    cluster:
+      max-redirects: 5
+      nodes: 127.0.0.1:6379,127.0.0.1:6380,127.0.0.1:6381,127.0.0.1:6382,127.0.0.1:6383,127.0.0.1:6384
+    jedis:
+      pool:
+        min-idle: 0
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+    database: 0
+    timeout: 1000
 
 
 mybatis-plus:
@@ -30,4 +39,5 @@ mybatis-plus:
       logic-not-delete-value: 0
 
 name: abc
-
+logging:
+  config: classpath:logback-spring.xml

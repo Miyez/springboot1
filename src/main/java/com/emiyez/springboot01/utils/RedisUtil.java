@@ -20,10 +20,10 @@ public class RedisUtil {
     @Autowired
     RedisTemplate<Object, Object> redisTemplate;
 
-    @Resource(name = "stringRedisTemplate")
+    @Resource(name = "abc")
     ValueOperations<String, String> valOpsStr;
 
-    @Resource(name = "redisTemplate")
+    @Resource(name = "abc")
     ValueOperations<Object, Object> valOpsObj;
 
     /**
